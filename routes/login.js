@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
-let MongoClient = require('mongodb').MongoClient;
+var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 var autoIncrement = require("mongodb-autoincrement");
 //Here we are configuring express to use body-parser as middle-ware.
 
 
 router.post('/', (request, response) => {
-    console.log(request.body);
+    
     MongoClient.connect(url, async function (err, db) {
         if (err) throw err;
         var dbmy = db.db('flutterapp_db1')
@@ -44,6 +44,7 @@ router.post('/', (request, response) => {
         });
 
     })
+
 });
 
 module.exports = router;
