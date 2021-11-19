@@ -3,11 +3,11 @@ var express = require("express");
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
-
+var constants = require('./constants.js');
 
 router.post('/', (request, response) => {
     console.log("request data==>",request.body);
-    MongoClient.connect(url, async function (err, db) {
+    MongoClient.connect(constants.url, async function (err, db) {
         if (err) throw err;
         var dbmy = db.db('flutterapp_db1')
         var collectionName = "customer"

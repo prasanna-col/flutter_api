@@ -1,14 +1,15 @@
 var express = require("express");
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+// var url = "mongodb+srv://Flutter_data:flutterapidata@cluster0.5kghi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var constants = require('./constants.js');
 var autoIncrement = require("mongodb-autoincrement");
 //Here we are configuring express to use body-parser as middle-ware.
 
 
 router.post('/', (request, response) => {
     
-    MongoClient.connect(url, async function (err, db) {
+    MongoClient.connect(constants.url, async function (err, db) {
         if (err){
             response.json({
                 message: "err",

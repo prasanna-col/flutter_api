@@ -47,3 +47,8 @@ console.log("rgbB", rgbB)
 console.log(colorMixer(rgbA, rgbB, 0.5));
 
 // console.log(colorMixer([128,0,0],[255,215,0],0.5));
+
+// email:prasann@yopmail.com
+// password:123456
+// name:prasanna
+// phone:9898989898
