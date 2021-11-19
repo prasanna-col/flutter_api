@@ -8,42 +8,46 @@ var autoIncrement = require("mongodb-autoincrement");
 
 router.post('/', (request, response) => {
     
-    MongoClient.connect(url, async function (err, db) {
-        if (err) throw err;
-        var dbmy = db.db('flutterapp_db1')
-        var collectionName = "customer"
-        var data = request.body
-        console.log("data", data);
+    // MongoClient.connect(url, async function (err, db) {
+    //     if (err) throw err;
+    //     var dbmy = db.db('flutterapp_db1')
+    //     var collectionName = "customer"
+    //     var data = request.body
+    //     console.log("data", data);
 
 
-        var collection = dbmy.collection(collectionName);
-        collection.findOne({ email: data.email, password: data.password }, function (err, res) {
-            console.log("res", res)
-            if (err) {
-                console.log("Failed");
-                response.json({
-                    message: "failed",
-                    response: null
-                });
-                db.close();
-            } else {
-                if(res != null){
-                    response.json({
-                        message: "Login successful",
-                        response: res
-                    });
-                }else{
-                    response.json({
-                        message: "User not available",
-                        response: null
-                    });
-                }
+    //     var collection = dbmy.collection(collectionName);
+    //     collection.findOne({ email: data.email, password: data.password }, function (err, res) {
+    //         console.log("res", res)
+    //         if (err) {
+    //             console.log("Failed");
+    //             response.json({
+    //                 message: "failed",
+    //                 response: null
+    //             });
+    //             db.close();
+    //         } else {
+    //             if(res != null){
+    //                 response.json({
+    //                     message: "Login successful",
+    //                     response: res
+    //                 });
+    //             }else{
+    //                 response.json({
+    //                     message: "User not available",
+    //                     response: null
+    //                 });
+    //             }
                 
-                db.close();
-            }
-        });
+    //             db.close();
+    //         }
+    //     });
 
-    })
+    // })
+    response.json({
+        message: "User not available",
+        response: null
+    });
 
 });
 
