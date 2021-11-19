@@ -6,7 +6,7 @@ var autoIncrement = require("mongodb-autoincrement");
 //Here we are configuring express to use body-parser as middle-ware.
 
 
-router.get('/', (request, response) => {
+router.post('/login', (request, response) => {
     console.log(request.body);
     MongoClient.connect(url, async function (err, db) {
         if (err) throw err;
