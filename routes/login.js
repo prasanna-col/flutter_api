@@ -1,15 +1,5 @@
-// var express = require('express');
-// var router = express.Router();
-
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
-// module.exports = router;
-
-const express = require("express");
-const router = express.Router();
+var express = require("express");
+var router = express.Router();
 let MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 var autoIncrement = require("mongodb-autoincrement");
