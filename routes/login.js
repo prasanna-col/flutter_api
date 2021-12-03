@@ -19,6 +19,7 @@ router.post('/', (request, response) => {
         }  
         var dbmy = db.db('flutterapp_db1')
         var collectionName = "customer"
+        console.log("request", request)
         var data = request.body
         console.log("data", data);
 
